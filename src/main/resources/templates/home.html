@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org ">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <title>Pet Boarding House</title>
+</head>
+<body>
+<div class="panel panel-default">
+    <div class="panel-heading"><h1  th:text="${appName}"></h1></div>
+
+    <div class="panel-body"><h2>Would you like to check in your dog today ?</h2><br/><h2>Did you bring any toys ?</h2>
+        <div class="btn-group pull-right">
+            <a th:href="@{ /newCustomer }">
+                <button class="btn btn-success">NEW CUSTOMER ?</button>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 vertical-center">
+            <img src="../static/img/dogs.jpg" th:src="@{img/dogs.jpg}" alt="dogs" title="dogs"  width="1000" height="760" align="middle"/>
+        </div>
+
+    </div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

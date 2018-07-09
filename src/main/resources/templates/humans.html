@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org ">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <title>Title</title>
+</head>
+<style>
+
+   body{ background-color:#ffffcc;
+       }
+   .row{padding:50px 200px}
+   }
+</style>
+<body>
+<div class="panel panel-default">
+    <div class="panel-heading"><h2 class="text-uppercase">List of customers </h2></div>
+
+</div>
+<!--data presented in list-->
+<!--<ul th:each="human: ${humans}">-->
+    <!--<li th:text="${human.name}"/>-->
+    <!--<span>-->
+            <!--<form method="POST" th:action="@{/deleteCustomer(id=${human.id})}">-->
+    <!--<button type="submit" name="submit" value="value" class="link-button">DELETE</button>-->
+<!--</form>-->
+        <!--</span>-->
+    <!--<div th:each="toy : ${human.toys}">-->
+        <!--<span th:text="${toy.title}"></span>-->
+
+    <!--</div>-->
+<!--</ul>-->
+<!-- end of data presented in list-->
+<!--<div>-->
+
+<!--<input type="hidden" name="humanId" th:value="${id}"/>-->
+<!--<a th:href="@{ /deleteCustomer(id=${id}) }">-->
+<!--<button type="submit"> DELETE </button>-->
+<!--</a>-->
+<!--</div>-->
+
+
+<!--<form id="delete" th:action="@{/deleteCustomer}" method="post" th:object="${human}">-->
+<!--<input id="humanId" th:field="*{id}" type="hidden"/>-->
+<!--<button type="submit" value="delete">DELETE</button>-->
+<!--</form>-->
+
+<div class="row">
+    <div class="col-md-8">
+        <table class="table table-bordered">
+            <thead>
+            <th>Owner Name</th>
+            <th>Toy 1</th>
+            <th>Toy 2</th>
+            <th>Toy 3</th>
+            <th>Actions</th>
+            </thead>
+            <tbody >
+            <tr th:each="human: ${humans}">
+                <td th:text="${human.name}"></td>
+                <!--<td><img width='50' src='{{ asset(' images/'.$item['image']) }}'></td>-->
+<div th:each="toy : ${human.toys}">
+    <td  th:text="${toy.title}"></td>
+</div>
+
+                <td>
+                    <a th:href="@{ /updateCustomer(id=${human.id}) }">
+                        <button type="submit" name="submit" value="value" class="link-button">EDIT</button>
+                    </a>
+                   <!-- <form method="GET" th:action="@{/updateCustomer(id=${human.id})}">-->
+                  <!--<form method="GET" th:action="@{/updateCustomer}">-->
+                       <!--<a href="#" th:href="@{/deleteCustomer(id=${human.id})}" title="Delete" >DELETE</a>-->
+                       <!-- <button type="submit" name="submit" value="value" class="link-button">UPDATE</button>-->
+                    <!--</form>-->
+                            <!--<a href="#" th:href="@{/customer/edit/(id=${human.id})}" title="Edit">EDIT</a> |-->
+
+                    <form method="POST" th:action="@{/deleteCustomer(id=${human.id})}">
+                    <!--<a href="#" th:href="@{/deleteCustomer(id=${human.id})}" title="Delete" >DELETE</a>-->
+                        <button type="submit" name="submit" value="value" class="link-button">DELETE</button>
+                    </form>
+
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <a th:href="@{/newCustomer}">
+            <div class="col-xs-6 text-right">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary">REGISTER</button>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

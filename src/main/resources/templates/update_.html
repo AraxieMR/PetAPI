@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Pets API Project</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+
+    <!--th:href="@{/webjars/bootstrap/3.3.7/bootstrap.min.css}"-->
+    <!--rel="stylesheet" media="screen" />-->
+    <link href="../static/css/style.css"
+          th:href="@{/css/style.css}"
+          rel="stylesheet" media="screen"/>
+    <!--<link rel="stylesheet" th:href="@{/css/style.css}"/>-->
+    <!--<link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />-->
+    <!--<link rel="stylesheet" type="text/css" href="css/style.css" />-->
+    <!--<c:url value="/css/style.css" var="jstlCss" />-->
+    <!--<link href="${jstlCss}" rel="stylesheet" />-->
+    <!--<link rel="stylesheet" type="text/css" media="all" href="../static/css/style.css"-->
+    <!--th:href="@{/css/style.css}" />-->
+</head>
+<body>
+
+<div class="panel panel-default">
+    <div class="panel-heading"><h1 class="text-uppercase">Welcome to Pet Boarding House !</h1></div>
+    <div class="panel-body"><h2>Where pets have fun playing with peers and toys while their owners take a break .</h2></div>
+</div>
+<div class="container">
+    <h3>Update a customer</h3>
+
+    <hr/>
+    <form action="/updateCustomer" style="border:1px solid #ccc" method="PUT">
+        <div class="form-group">
+            <label><b>Customer name :</b></label>
+            <input type="text" placeholder="Enter your name" name="name"/>
+        </div>
+        <div class="form-group">
+            <label><b>Customer age :</b></label>
+            <input type="text" placeholder="Enter your name" name="age"/>
+        </div>
+        <div class="form-group">
+            <label><b>Toy one name :</b></label>
+            <input type="text" placeholder="Enter your pet's toy name "
+                   name="toy1Name"/></div>
+        <div class="form-group">
+            <label><b>Toy one color :</b></label>
+            <input type="text" placeholder="Enter your pet's toy color "
+                   name="toy1Color"/></div>
+        <div class="form-group">
+            <label><b>Toy two name :</b></label><input type="text" placeholder="Enter your pet's toy name "
+                                                       name="toy2Name"/></div>
+        <div class="form-group"> <label><b>Toy two color :</b></label><input type="text"
+                                                                             placeholder="Enter your pet's toy color "
+                                                                             name="toy2Color"/></div>
+        <div class="form-group"> <label><b>Toy three name :</b></label><input type="text"
+                                                                              placeholder="Enter your pet's toy name "
+                                                                              name="toy3Name"/></div>
+        <div class="form-group"> <label><b>Toy three color :</b></label><input type="text"
+                                                                               placeholder="Enter your pet's toy color "
+                                                                               name="toy3Color"/></div>
+        <div class="form-group"><label><b>Pet Name :</b></label><input type="text" placeholder="Enter your pet name"
+                                                                       name="petName"/></div>
+        <div class="form-group"> <label><b>Pet Breed:</b></label><input type="text" placeholder="Enter your pet name"
+                                                                        name="petBreed"/></div>
+        <div class="form-group"><label><b>Pet Color :</b></label><input type="text" placeholder="Enter your pet name"
+                                                                        name="petColor"/></div>
+        <div class="btn-group">
+            <button type="submit" class="btn btn-primary" value="Submit">SAVE</button>
+        </div>
+    </form>
+</div>
+<div class="panel-footer row">
+    <div class="col-xs-6 text-left">
+
+    </div>
+    <a th:href="@{/}">
+        <div class="col-xs-6 text-right">
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary">CANCEL</button>
+            </div>
+        </div>
+    </a>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</body>
+</html>
